@@ -128,8 +128,6 @@ export default function Tickets() {
 	const inProgress = rows.filter(row => row.status === "In Progress")
 	const humanReview = rows.filter(row => row.status === "Human Review")
 	const closed = rows.filter(row => row.status === "Closed")
-
-	console.log(newTicket)
 	
 	return (
 		<div className="flex flex-col gap-2">
@@ -182,7 +180,7 @@ export default function Tickets() {
 				</div>
 				<div className="flex flex-col gap-4 w-full">
 					<div className="flex flex-row justify-between py-3 px-6 text-danger w-full bg-danger-100 rounded-xl">
-						<div className="flex gap-2">
+						<div className="flex gap-2 whitespace-nowrap">
 							<TicketIcon />
 							Human Review
 						</div>

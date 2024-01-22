@@ -8,8 +8,11 @@ import OrdersIcon from '@/public/list.svg'
 import CustomersIcon from '@/public/team-1.svg'
 import SettingsIcon from '@/public/settings-1.svg'
 import { Link } from '@nextui-org/link'
+import { usePathname } from 'next/navigation'
 
 const SideMenu = ({ className, collapsed }: { className: string, collapsed: boolean }) => {
+    const pathname = usePathname()
+    // console.log(pathname.slice(1).split('/').includes('tickets'))
     return (
         <div className={className + 'w-full mt-11'}>
             <ul className={`menu bg-[#002E66] text-white p-0 m-0 rounded-box top-0 transition-width duration-1000 ease-in-out ${collapsed ? `` : `w-[267px]`}`}>
@@ -20,7 +23,7 @@ const SideMenu = ({ className, collapsed }: { className: string, collapsed: bool
                     </Link>
                 </li>
                 <li>
-                    <details className="dropdown dropdown-right">
+                    <details open={pathname.slice(1).split('/').includes('tickets')} className="dropdown dropdown-right">
                         <summary>
                             <Image src={TicketsIcon} alt="ticket icon" />
                             <span className={collapsed ? 'hidden' : ''}>Tickets</span>
@@ -33,7 +36,7 @@ const SideMenu = ({ className, collapsed }: { className: string, collapsed: bool
                     </details>
                 </li>
                 <li>
-                    <details className="dropdown dropdown-right">
+                    <details open={pathname.slice(1).split('/').includes('chatbots')} className="dropdown dropdown-right">
                         <summary>
                             <Image src={ChatbotsIcon} alt="chatbots icon" />
                             <span className={collapsed ? 'hidden' : ''}>Chatbots</span>

@@ -40,13 +40,13 @@ export default function RootLayout({
 			<head />
 			<body
 				className={clsx({
-					"min-h-screen max-h-full bg-background dark:bg-black antialiased": true,
+					"min-h-screen max-h-full bg-background antialiased dark:text-foreground-600": true,
 					[poppins.variable]: true,
 				})}
 			>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-					<div className="relative flex flex-col h-screen dark:text-foreground-600">
-						<Layout children={children} className="container mx-auto max-w-[1440px] flex-grow relative" />
+					<div className="relative flex flex-col h-screen">
+						<Layout className="w-full mx-auto flex-grow relative">{children}</Layout>
 					</div>
 				</Providers>
 			</body>

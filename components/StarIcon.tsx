@@ -1,6 +1,6 @@
 import {SVGProps} from "react";
 type IconSvgProps = SVGProps<SVGSVGElement>;
-export default function EditIcon(props:IconSvgProps) {
+export default function StarIcon(props:IconSvgProps) {
   return (
     <svg
       aria-hidden="true"

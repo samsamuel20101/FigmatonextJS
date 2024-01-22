@@ -1,4 +1,4 @@
-export default function TicketsLayout({
+export default function ChatbotLayout({
 	children,
 }: {
 	children: React.ReactNode;

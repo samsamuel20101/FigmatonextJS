@@ -8,12 +8,13 @@ import LogoImage from "@/public/logo.png"
 import LogoSmallImage from '@/public/Logo-small.svg'
 import ChevronBtm from '@/public/chevron-bottom.svg'
 import AdminLogo from '@/public/admin_avatar.png'
+import { SidebarSmallLogo } from "./icons"
 
-const Sidebar = ({ collapsed, setSidebarCollapsed } : {setSidebarCollapsed: React.Dispatch<React.SetStateAction<any>>, collapsed:boolean}) => {
+const Sidebar = ({ collapsed, setSidebarCollapsed }: { setSidebarCollapsed: React.Dispatch<React.SetStateAction<any>>, collapsed: boolean }) => {
 	return (
 		<aside className="flex flex-col justify-between items-center py-8 bg-[#002E66] rounded-r-2xl max-h-screen">
 			<div className="w-full flex flex-col items-center">
-				<Image src={collapsed ? LogoSmallImage : LogoImage} alt="logo" width={collapsed ? 44 : 162} />
+				{collapsed ? <SidebarSmallLogo /> : <div className="h-[57px]"><Image src={LogoImage} alt="logo" width={162} className="object-cover" /></div>}
 				<div className="relative w-full">
 					<SideMenu className='absolute top-0' collapsed={collapsed} />
 				</div>
@@ -30,7 +31,7 @@ const Sidebar = ({ collapsed, setSidebarCollapsed } : {setSidebarCollapsed: Reac
 				<div className="flex flex-row max-w-32 justify-between items-center">
 					<h1 className={`text-gray-300 transition-all duration-300 ease-in-out ${collapsed && `hidden`}`}>Collapse Menu</h1>
 					<button onClick={setSidebarCollapsed} >
-						<Image className={`bg-blue-500 rounded-md bg-blend-multiply ${collapsed ? `rotate-0`:`rotate-180`}`} width={24} height={24} src={ChevronBtm} alt="chevronBtm" />
+						<Image className={`bg-blue-500 rounded-md bg-blend-multiply ${collapsed ? `rotate-0` : `rotate-180`}`} width={24} height={24} src={ChevronBtm} alt="chevronBtm" />
 					</button>
 				</div>
 			</div>

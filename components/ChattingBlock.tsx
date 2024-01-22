@@ -1,11 +1,10 @@
 import { Tooltip } from "@nextui-org/tooltip"
 import EyeIcon from "./EyeIcon"
-import EditIcon from "./EditIcon"
-import DeleteIcon from "./DeleteIcon"
 import { Button } from "@nextui-org/button"
 import { title } from "./primitives"
 import BlobIcon from "./BlobIcon"
 import SendIcon from "./SendIcon"
+import { DeleteIcon, EditIcon } from "./icons"
 
 const ChattingBlock = () => {
 	return (
@@ -14,7 +13,7 @@ const ChattingBlock = () => {
 				<div>New Ticket: #2212</div>
 				<div>Change Status</div>
 			</div>
-			<div className="flex flex-col justify-between p-4 gap-5 border-b-1">
+			<div className="flex flex-col justify-between p-4 gap-5 border-b-1 bg-foreground-100">
 				<div className="text-2xl font-bold">Sipping Questions</div>
 				<div className="flex flex-row justify-between">
 					<div>Tue, Nov 28, 2023 at 10:21 AM</div>
@@ -37,10 +36,10 @@ const ChattingBlock = () => {
 					</div>
 				</div>
 			</div>
-			<div className="flex flex-col relative py-8 px-4 h-full w-full">
+			<div className="flex flex-col relative py-8 px-4 h-full w-full bg-foreground-50">
 				<div className="absolute bottom-0 w-full -mx-4">
 					<div className="w-full m-0 px-4">
-						<div className="w-full rounded-lg p-2 bg-[#bababa] h-32">hello</div>
+						<div className="w-full rounded-lg p-2 bg-foreground-200 h-32">hello</div>
 					</div>
 					<div className="w-full relative flex flex-row-reverse">
 						<Button radius="full" className="m-4" startContent={<SendIcon />}>Send Message</Button>

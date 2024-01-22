@@ -2,8 +2,6 @@
 import clsx from "clsx";
 import React, { ReactNode, useState } from "react";
 import {ScrollShadow} from "@nextui-org/scroll-shadow";
-import EditIcon from "./EditIcon";
-import Image from "next/image";
 import Sidebar from "./sidebar";
 const Layout = ({children, className}:{children: ReactNode, className: string}) => {
   const [collapsed, setSidebarCollapsed] = useState(false);
@@ -20,7 +18,7 @@ const Layout = ({children, className}:{children: ReactNode, className: string}) 
       }, className)}
     >
       <Sidebar setSidebarCollapsed={() =>setSidebarCollapsed(prev => !prev)} collapsed={collapsed}/>
-      <ScrollShadow hideScrollBar className='px-8 flex flex-col'>{children}</ScrollShadow>
+      <ScrollShadow hideScrollBar className='px-8 flex flex-col bg-foreground-50'>{children}</ScrollShadow>
     </main>
   );
 };

@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@nextui-org/button": "2.0.26",
-    "@nextui-org/code": "2.0.24",
     "@nextui-org/input": "2.1.16",
     "@nextui-org/kbd": "2.0.25",
     "@nextui-org/link": "2.0.26",
@@ -31,10 +30,11 @@
     "eslint-config-next": "14.0.2",
     "framer-motion": "^10.16.4",
     "intl-messageformat": "^10.5.0",
-    "next": "14.0.2",
+    "next": "^14.1.0",
     "next-themes": "^0.2.1",
     "postcss": "8.4.31",
     "react": "18.2.0",
+    "react-ace": "^10.1.0",
     "react-dom": "18.2.0",
     "tailwind-variants": "^0.1.18",
     "tailwindcss": "3.3.5",
@@ -43,9 +43,13 @@
   },
   "devDependencies": {
     "@nextui-org/chip": "^2.0.25",
+    "@nextui-org/code": "^2.0.24",
     "@nextui-org/divider": "^2.0.25",
     "@nextui-org/pagination": "^2.0.26",
     "@nextui-org/scroll-shadow": "^2.1.12",
+    "@nextui-org/select": "^2.1.20",
+    "@nextui-org/slider": "^2.2.5",
+    "@nextui-org/tabs": "^2.0.26",
     "@nextui-org/tooltip": "^2.0.29",
     "daisyui": "^4.6.0"
   }

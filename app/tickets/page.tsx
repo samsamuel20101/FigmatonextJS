@@ -153,63 +153,63 @@ export default function Tickets() {
 			<div className="flex flex-row justify-between font-bold text-xl">
 				<div >New Tickets (12)</div>
 				<div className="flex flex-row gap-3">
-					<TicketToggleView selected={selected} setSelected={setSelected}/>
+					<TicketToggleView selected={selected} setSelected={setSelected} />
 					<Button href={"/tickets/create"} as={Link} radius="full" color="primary" variant="solid" startContent={<TicketIcon />}>
 						Create Ticket
 					</Button>
 				</div>
 			</div>
 			{selected == "table"
-			? (
-				<TicketTable rows={rows} />
-			)
-			: (
-				<div className="flex flex-row justify-between gap-4">
-					<div className="flex flex-col gap-4 w-full">
-						<div className="flex flex-row justify-between py-3 px-6 text-primary w-full bg-primary-100 rounded-xl">
-							<div className="flex gap-2">
-								<TicketIcon />
-								New Tickets
+				? (
+					<TicketTable rows={rows} />
+				)
+				: (
+					<div className="flex flex-row justify-between gap-4">
+						<div className="flex flex-col gap-4 w-full">
+							<div className="flex flex-row justify-between py-3 px-6 text-primary w-full bg-primary-100 rounded-xl">
+								<div className="flex gap-2">
+									<TicketIcon />
+									New Tickets
+								</div>
+								<span className="font-bold">{newTicket.length}</span>
 							</div>
-							<span className="font-bold">{newTicket.length}</span>
+							{newTicket.map((item, i) => <TicketCard key={item.key + '_ticket_' + i} ticket={item} />)}
 						</div>
-						{newTicket.map((item, i) => <TicketCard key={item.key +'_ticket_'+ i} ticket={item} />)}
-					</div>
-					<div className="flex flex-col gap-4 w-full">
-						<div className="flex flex-row justify-between py-3 px-6 text-warning w-full bg-warning-100 rounded-xl">
-							<div className="flex gap-2">
-								<TicketIcon />
-								In Progress
+						<div className="flex flex-col gap-4 w-full">
+							<div className="flex flex-row justify-between py-3 px-6 text-warning w-full bg-warning-100 rounded-xl">
+								<div className="flex gap-2">
+									<TicketIcon />
+									In Progress
+								</div>
+								<span className="font-bold">{inProgress.length}</span>
 							</div>
-							<span className="font-bold">{inProgress.length}</span>
+							{inProgress.map((item, i) => <TicketCard key={item.key + '_ticket_' + i} ticket={item} />)}
 						</div>
-						{inProgress.map((item, i) => <TicketCard key={item.key +'_ticket_'+ i} ticket={item} />)}
-					</div>
-					<div className="flex flex-col gap-4 w-full">
-						<div className="flex flex-row justify-between py-3 px-6 text-danger w-full bg-danger-100 rounded-xl">
-							<div className="flex gap-2">
-								<TicketIcon />
-								Human Review
+						<div className="flex flex-col gap-4 w-full">
+							<div className="flex flex-row justify-between py-3 px-6 text-danger w-full bg-danger-100 rounded-xl">
+								<div className="flex gap-2 whitespace-nowrap">
+									<TicketIcon />
+									Human Review
+								</div>
+								<span className="font-bold">{humanReview.length}</span>
 							</div>
-							<span className="font-bold">{humanReview.length}</span>
+							{humanReview.map((item, i) => <TicketCard key={item.key + '_ticket_' + i} ticket={item} />)}
 						</div>
-						{humanReview.map((item, i) => <TicketCard key={item.key +'_ticket_'+ i} ticket={item} />)}
-					</div>
-					<div className="flex flex-col gap-4 w-full">
-						<div className="flex flex-row justify-between py-3 px-6 text-success w-full bg-success-100 rounded-xl">
-							<div className="flex gap-2">
-								<TicketIcon />
-								Closed
+						<div className="flex flex-col gap-4 w-full">
+							<div className="flex flex-row justify-between py-3 px-6 text-success w-full bg-success-100 rounded-xl">
+								<div className="flex gap-2">
+									<TicketIcon />
+									Closed
+								</div>
+								<span className="font-bold">{closed.length}</span>
 							</div>
-							<span className="font-bold">{closed.length}</span>
+							{closed.map((item, i) => <TicketCard key={item.key + '_ticket_' + i} ticket={item} />)}
 						</div>
-						{closed.map((item, i) => <TicketCard key={item.key +'_ticket_'+ i} ticket={item} />)}
 					</div>
-				</div>
-			)
+				)
 			}
-			
-			
+
+
 		</div>
 	);
 }

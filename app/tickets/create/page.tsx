@@ -148,8 +148,8 @@ export default function CreateTicket() {
 			<div className="flex flex-row justify-between gap-8 w-full h-[670px] min-h-full">
 				<ChattingBlock />
 				<div className="flex flex-col flex-grow gap-4">
-					<div className="w-64 h-72 p-4 rounded-lg shadow-lg">contact card</div>
-					<div className="w-64 h-96 p-4 rounded-lg shadow-lg">order card</div>
+					<div className="w-64 h-72 p-4 rounded-lg shadow-lg bg-foreground-50">contact card</div>
+					<div className="w-64 h-96 p-4 rounded-lg shadow-lg bg-foreground-50">order card</div>
 				</div>
 			</div>
 		</div>

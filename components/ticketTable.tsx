@@ -10,11 +10,11 @@ import {Pagination, PaginationItemType, PaginationItemRenderProps} from "@nextui
 import ShopifyIcon from '@/public/shopify.svg'
 import MailIcon from '@/public/mail.svg'
 import NetherlandsFlag from '@/public/Netherlands.svg'
-import EyeIcon from '@/components/EyeIcon'
-import EditIcon from '@/components/EditIcon'
-import DeleteIcon from '@/components/DeleteIcon'
-import ChevronIcon from "@/components/ChevronIcon"
+import EyeIcon from './EyeIcon'
+import ChevronIcon from "./ChevronIcon"
 import clsx from "clsx";
+import EditIcon from "./StarIcon";
+import { DeleteIcon } from "./icons";
 
 interface TicketType {
   key: string,
