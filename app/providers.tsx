@@ -5,6 +5,11 @@ import { NextUIProvider } from "@nextui-org/system";
 import { useRouter } from 'next/navigation'
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { ThemeProviderProps } from "next-themes/dist/types";
+import { createContext } from 'react'
+import SidebarProvider from "./sidebarProvider";
+import CartProvider from "./cartProvider";
+
+export const ThemeContext = createContext({})
 
 export interface ProvidersProps {
 	children: React.ReactNode;
@@ -16,7 +21,14 @@ export function Providers({ children, themeProps }: ProvidersProps) {
 
 	return (
 		<NextUIProvider navigate={router.push}>
-			<NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+			<NextThemesProvider {...themeProps}>
+				<SidebarProvider>
+					<CartProvider>
+						{children}
+					</CartProvider>
+				</SidebarProvider>
+			</NextThemesProvider>
 		</NextUIProvider>
 	);
 }
+

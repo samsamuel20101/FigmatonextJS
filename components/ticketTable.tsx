@@ -2,11 +2,11 @@
 
 import { useCallback, useMemo, useState } from "react";
 import Image from "next/image";
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue} from "@nextui-org/table";
+import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue } from "@nextui-org/table";
 import { Link } from "@nextui-org/link";
-import {Chip} from "@nextui-org/chip";
+import { Chip } from "@nextui-org/chip";
 import { Tooltip } from "@nextui-org/tooltip";
-import {Pagination, PaginationItemType, PaginationItemRenderProps} from "@nextui-org/pagination";
+import { Pagination, PaginationItemType, PaginationItemRenderProps } from "@nextui-org/pagination";
 import ShopifyIcon from '@/public/shopify.svg'
 import MailIcon from '@/public/mail.svg'
 import NetherlandsFlag from '@/public/Netherlands.svg'
@@ -24,14 +24,14 @@ interface TicketType {
     email: string,
   },
   customer: {
-    name: string, 
-    country: string, 
+    name: string,
+    country: string,
     email: string
   },
   status: string,
   allClasifications: string,
   lastUpdate: {
-    message: string, 
+    message: string,
     elapsedTime: number
   },
   totalValue: number,
@@ -77,8 +77,8 @@ const columns = [
   },
 ] as ColumnType[];
 
-const TicketTable = ({rows} : {rows: TicketType[]}) => {
-  const [selectedKeys, setSelectedKeys] = useState<Selection | any>(new Set(["2","4","5","10"]));
+const TicketTable = ({ rows }: { rows: TicketType[] }) => {
+  const [selectedKeys, setSelectedKeys] = useState<Selection | any>(new Set(["2", "4", "5", "10"]));
 
   const renderItem = ({
     ref,
@@ -118,7 +118,7 @@ const TicketTable = ({rows} : {rows: TicketType[]}) => {
         className={clsx(
           className,
           isActive &&
-            "text-white bg-gradient-to-br from-blue-500 to-blue-500 font-bold",
+          "text-white bg-gradient-to-br from-blue-500 to-blue-500 font-bold",
         )}
         onClick={() => setPage(value)}
       >
@@ -126,9 +126,9 @@ const TicketTable = ({rows} : {rows: TicketType[]}) => {
       </button>
     );
   };
-  
-  const renderCell = useCallback((ticket : any, columnKey: any) => {
-    const cellValue = ticket[columnKey] 
+
+  const renderCell = useCallback((ticket: any, columnKey: any) => {
+    const cellValue = ticket[columnKey]
     switch (columnKey) {
       case "ticketId":
         return (
@@ -166,6 +166,8 @@ const TicketTable = ({rows} : {rows: TicketType[]}) => {
             return <Chip size="sm" color="warning" className="bg-opacity-30 text-warning">{cellValue}</Chip>
           case "Human Review":
             return <Chip size="sm" color="danger" className="bg-opacity-30 text-danger">{cellValue}</Chip>
+          case "Closed":
+            return <Chip size="sm" color="success" className="bg-opacity-30 text-success">{cellValue}</Chip>
           default:
             break;
         }
@@ -189,7 +191,7 @@ const TicketTable = ({rows} : {rows: TicketType[]}) => {
         )
       case "actions":
         return (
-            <div className="relative flex items-center gap-2">
+          <div className="relative flex items-center gap-2">
             <Tooltip content="Details">
               <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
                 <EyeIcon />
@@ -210,7 +212,7 @@ const TicketTable = ({rows} : {rows: TicketType[]}) => {
       default:
         <div>{cellValue}</div>
     }
-  },[])
+  }, [])
 
   return (
     <Table
@@ -235,12 +237,12 @@ const TicketTable = ({rows} : {rows: TicketType[]}) => {
       }
     >
       <TableHeader columns={columns}>
-        {(column : any) => <TableColumn key={column.key}>{column.label}</TableColumn>}
+        {(column: any) => <TableColumn key={column.key}>{column.label}</TableColumn>}
       </TableHeader>
       <TableBody items={rows}>
-        {(item : any) => (
+        {(item: any) => (
           <TableRow key={item.key} className="items-center">
-            {(columnKey : any) => 
+            {(columnKey: any) =>
               <TableCell>{renderCell(item, columnKey)}</TableCell>
             }
           </TableRow>

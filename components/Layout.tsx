@@ -1,24 +1,25 @@
 "use client"
 import clsx from "clsx";
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useContext, useState } from "react";
 import {ScrollShadow} from "@nextui-org/scroll-shadow";
 import Sidebar from "./sidebar";
+import { SidebarContext } from "@/app/sidebarProvider";
 const Layout = ({children, className}:{children: ReactNode, className: string}) => {
-  const [collapsed, setSidebarCollapsed] = useState(false);
+	const [sidebarStatus, setSidebarStatus] = useContext(SidebarContext)
   return (
     <main
       className={clsx({
         // 👇 use grid layout
         "grid min-h-screen": true,
         // 👇 toggle the width of the sidebar depending on the state
-        "grid-cols-sidebar": !collapsed,
-        "grid-cols-sidebar-collapsed": collapsed,
+        "grid-cols-sidebar": !sidebarStatus,
+        "grid-cols-sidebar-collapsed": sidebarStatus,
         // 👇 transition animation classes
         "transition-[grid-template-columns] duration-300 ease-in-out": true,
       }, className)}
     >
-      <Sidebar setSidebarCollapsed={() =>setSidebarCollapsed(prev => !prev)} collapsed={collapsed}/>
-      <ScrollShadow hideScrollBar className='px-8 flex flex-col bg-foreground-50'>{children}</ScrollShadow>
+      <Sidebar />
+      <ScrollShadow hideScrollBar className=' flex flex-col h-full bg-foreground-50'>{children}</ScrollShadow>
     </main>
   );
 };

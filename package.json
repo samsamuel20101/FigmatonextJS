@@ -42,9 +42,12 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@nextui-org/accordion": "^2.0.28",
+    "@nextui-org/checkbox": "^2.0.25",
     "@nextui-org/chip": "^2.0.25",
     "@nextui-org/code": "^2.0.24",
     "@nextui-org/divider": "^2.0.25",
+    "@nextui-org/dropdown": "^2.1.16",
     "@nextui-org/pagination": "^2.0.26",
     "@nextui-org/scroll-shadow": "^2.1.12",
     "@nextui-org/select": "^2.1.20",

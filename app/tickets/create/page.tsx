@@ -10,6 +10,8 @@ import { Chip } from "@nextui-org/chip";
 import Image from "next/image";
 import TicketCard from "@/components/TicketCard";
 import ChattingBlock from "@/components/ChattingBlock";
+import ContactCard from "@/components/contactCard";
+import OrderCard from "@/components/orderCard";
 
 const rows = [
 	{
@@ -127,7 +129,7 @@ const rows = [
 export default function CreateTicket() {
 
 	return (
-		<div className="flex flex-col gap-4">
+		<div className="flex flex-col gap-4 h-full pb-8">
 			<div className="flex justify-between">
 				<h1 className={title()}>Tickets</h1>
 				<div className="flex flex-row gap-2">
@@ -148,8 +150,12 @@ export default function CreateTicket() {
 			<div className="flex flex-row justify-between gap-8 w-full h-[670px] min-h-full">
 				<ChattingBlock />
 				<div className="flex flex-col flex-grow gap-4">
-					<div className="w-64 h-72 p-4 rounded-lg shadow-lg bg-foreground-50">contact card</div>
-					<div className="w-64 h-96 p-4 rounded-lg shadow-lg bg-foreground-50">order card</div>
+					<div className="w-full h-auto p-4 rounded-lg shadow-lg bg-foreground-100">
+						<ContactCard />
+					</div>
+					<div className="w-full h-full p-4 rounded-lg shadow-lg bg-foreground-100">
+						<OrderCard />
+					</div>
 				</div>
 			</div>
 		</div>

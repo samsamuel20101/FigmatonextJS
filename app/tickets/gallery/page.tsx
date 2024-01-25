@@ -130,7 +130,7 @@ export default function Tickets() {
 	const closed = rows.filter(row => row.status === "Closed")
 	
 	return (
-		<div className="flex flex-col gap-2">
+		<div className="flex flex-col gap-2 pb-6">
 			<div className="flex justify-between">
 				<h1 className={title()}>Tickets</h1>
 				<div className="flex flex-row gap-2">

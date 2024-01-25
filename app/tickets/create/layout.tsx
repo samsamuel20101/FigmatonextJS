@@ -4,7 +4,7 @@ export default function CreateTicketsLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<section className="flex flex-col justify-between w-full h-full min-h-max mb-0 gap-6 py-8">
+		<section className="flex flex-col justify-between w-full h-full min-h-max mb-0 gap-6">
 			{children}
 		</section>
 	);

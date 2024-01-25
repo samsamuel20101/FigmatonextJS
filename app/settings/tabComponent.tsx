@@ -10,7 +10,7 @@ const TabComponent = () => {
   const pathname = usePathname()
 	const [selected, setSelected] = useState<string | Key>(pathname.slice(1).split('/')[1])
 	const router = useRouter()
-  console.log(pathname.slice(1).split('/')[1])
+  // console.log(pathname.slice(1).split('/')[1])
 	const handleTab = (key: string) => {
 		setSelected(key)
 		router.push('/settings/' + key, { scroll: false })

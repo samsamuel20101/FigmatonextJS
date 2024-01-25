@@ -33,6 +33,7 @@ import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/ext-language_tools";
+import ChatbotChatting from "@/components/chatbotChatting";
 
 export default function Chatbots() {
 	const [selected, setSelected] = useState<string | Key>("chatbot")
@@ -426,36 +427,7 @@ export default function Chatbots() {
 				</div>
 				<div className="flex flex-col w-2/5 gap-4">
 					<h1 className="text-xl font-bold">Chat Bot</h1>
-					<div className="bg-foreground-50 dark:bg-foreground-100 shadow-lg rounded-lg w-full h-full">
-						<div className="flex flex-col h-full w-full">
-							<div className="h-[185px] w-full rounded-t-lg flex flex-col items-center bg-primary p-6 gap-6 text-foreground-50">
-								<h1 className="text-2xl font-bold">Chat with out AI</h1>
-								<h3 className="text-medium">Ask any question you have</h3>
-								<div className="flex flex-row w-full justify-between items-center gap-4 font-bold">
-									<Button size="sm" radius="full" className="w-full bg-foreground-50 text-primary flex flex-row justify-center gap-2 items-center font-bold" startContent={<NewChatIcon width={24} height={24} />}>New Chat</Button>
-									<Button size="sm" radius="full" className="w-full bg-foreground-50 text-primary flex flex-row justify-center gap-2 items-center font-bold" startContent={<SpeakHumanIcon width={24} height={24} />}>Speak to Human</Button>
-								</div>
-							</div>
-							<div className="relative flex flex-col h-full w-full min-h-[480px]">
-								<div className="absolute left-0 right-0 bottom-0 p-4">
-									<Input
-										radius="sm"
-										size="sm"
-										variant="bordered"
-										className="w-full h-12"
-										endContent={
-											<div className="flex flex-row gap-3 m-2">
-												<EmojiSmileIcon className="text-primary" />
-												<SendIcon className="text-primary" />
-											</div>
-										}
-										placeholder="Type your message here..."
-									/>
-								</div>
-								<div className="w-full h-full flex flex-col p-2">Chatting Pane</div>
-							</div>
-						</div>
-					</div>
+					<ChatbotChatting />
 					<div className="relative h-12">
 						<Button size="md" isIconOnly radius="full" className="bg-transparent absolute right-0">
 							<CrossCloseIcon />

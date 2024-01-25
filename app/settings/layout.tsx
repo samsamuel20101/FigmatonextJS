@@ -10,8 +10,8 @@ export default function SettingsLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<section className="flex flex-col justify-between w-full h-full gap-6 py-8">
-			<div className="flex flex-col gap-4 h-full">
+		<section className="flex flex-col justify-between w-full h-full min-h-max gap-6 p-8">
+			<div className="flex flex-col gap-4 h-full min-h-max">
 				<div className="flex justify-between">
 					<h1 className={title()}>Settings</h1>
 					<div className="flex flex-row gap-2">
@@ -29,8 +29,8 @@ export default function SettingsLayout({
 						/>
 					</div>
 				</div>
-				<div className="flex flex-row gap-4 w-full h-full">
-					<div className="bg-foreground-50 dark:bg-foreground-100 shadow-lg p-4 rounded-lg w-full h-full min-w-min">
+				<div className="flex flex-row gap-4 w-full h-full min-h-max shadow-lg">
+					<div className="bg-foreground-50 dark:bg-foreground-100 p-4 rounded-lg w-full h-full min-w-min">
 						<TabComponent />
 						{children}
 					</div>

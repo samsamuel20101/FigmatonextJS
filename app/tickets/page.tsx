@@ -164,7 +164,7 @@ export default function Tickets() {
 					<TicketTable rows={rows} />
 				)
 				: (
-					<div className="flex flex-row justify-between gap-4">
+					<div className="flex flex-row justify-between gap-4 pb-6">
 						<div className="flex flex-col gap-4 w-full">
 							<div className="flex flex-row justify-between py-3 px-6 text-primary w-full bg-primary-100 rounded-xl">
 								<div className="flex gap-2">

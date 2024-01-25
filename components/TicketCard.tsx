@@ -17,7 +17,7 @@ const TicketCard = ({ ticket }: { ticket: any }) => {
 	return (
 		<div className="relative">
 			<div className={`w-full absolute rounded-2xl h-8 z-0 -translate-y-1 bg-${colorList[ticketList.indexOf(ticket.status)]}`} />
-			<div className="relative flex flex-col gap-1 w-full shadow-lg rounded-lg p-3 text-sm font-bold bg-foreground-100 z-10 translate-y-0.5">
+			<div className="relative flex flex-col gap-1 w-full shadow-lg rounded-lg p-3 text-sm font-bold bg-foreground-100 translate-y-0.5">
 				<div className="mb-5">{ticket.ticketId}</div>
 				<div className="flex flex-row justify-between items-start">
 					<div>Woocommerce</div>
