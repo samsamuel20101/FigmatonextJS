@@ -1110,9 +1110,9 @@ export const DotIcon: React.FC<IconSvgProps> = (props) => {
 				cy="2"
 				r="2"
 				fill="#252727"
-				// strokeWidth="0.9375"
-				// strokeLinecap="round"
-				// strokeLinejoin="round"
+			// strokeWidth="0.9375"
+			// strokeLinecap="round"
+			// strokeLinejoin="round"
 			/>
 		</svg>
 	);
@@ -1139,4 +1139,215 @@ export const BinIcon: React.FC<IconSvgProps> = (props) => {
 		</svg>
 	);
 };
+
+export const CreditCardIcon: React.FC<IconSvgProps> = (props) => {
+
+	return (
+		<svg
+			fill="none"
+			height={24}
+			viewBox="0 0 24 24"
+			width={24}
+			xmlns="http://www.w3.org/2000/svg"
+			{...props}
+		>
+			<path
+				d="M3 8.5H21M3 10.5H21M5.5 13.5H12.5M5.5 15.5H9.5M5 6H19C20.1046 6 21 6.89543 21 8V16C21 17.1046 20.1046 18 19 18H5C3.89543 18 3 17.1046 3 16V8C3 6.89543 3.89543 6 5 6ZM18.5 15C18.5 15.2761 18.2761 15.5 18 15.5C17.7239 15.5 17.5 15.2761 17.5 15C17.5 14.7239 17.7239 14.5 18 14.5C18.2761 14.5 18.5 14.7239 18.5 15Z"
+				stroke="currentColor"
+				strokeWidth="1.25"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	);
+};
+
+export const TaxIcon: React.FC<IconSvgProps> = (props) => {
+
+	return (
+		<svg
+			fill="none"
+			height={24}
+			viewBox="0 0 24 24"
+			width={24}
+			xmlns="http://www.w3.org/2000/svg"
+			{...props}
+		>
+			<path
+				d="M18 10H14C12.8954 10 12 9.10457 12 8V4M9 17H15M9 14H12M18 9.82843V18C18 19.1046 17.1046 20 16 20H8C6.89543 20 6 19.1046 6 18V6C6 4.89543 6.89543 4 8 4H12.1716C12.702 4 13.2107 4.21071 13.5858 4.58579L17.4142 8.41421C17.7893 8.78929 18 9.29799 18 9.82843Z"
+				stroke="currentColor"
+				strokeWidth="1.25"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	);
+};
+
+export const BackIcon: React.FC<IconSvgProps> = (props) => {
+
+	return (
+		<svg
+			fill="none"
+			height={24}
+			viewBox="0 0 24 24"
+			width={24}
+			xmlns="http://www.w3.org/2000/svg"
+			{...props}
+		>
+			<path
+				d="M18 12L6 12M6 12L10 16M6 12L10 8"
+				stroke="currentColor"
+				strokeWidth="1.25"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	);
+};
+
+export const CheckCircleIcon: React.FC<IconSvgProps> = (props) => {
+
+	return (
+		<svg
+			fill="none"
+			height={18}
+			viewBox="0 0 18 18"
+			width={18}
+			xmlns="http://www.w3.org/2000/svg"
+			{...props}
+		>
+			<path
+				d="M12.1898 7.58317L8.91683 10.8562C8.62395 11.1491 8.14905 11.1491 7.85618 10.8562L5.99999 9M15.75 9C15.75 12.728 12.728 15.75 9 15.75C5.27208 15.75 2.25 12.728 2.25 9C2.25 5.27208 5.27208 2.25 9 2.25C12.728 2.25 15.75 5.27208 15.75 9Z"
+				stroke="#0066FF"
+				strokeWidth="0.9375"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	);
+};
+
+export const FlagIcon: React.FC<IconSvgProps> = (props) => {
+
+	return (
+		<svg
+			fill="none"
+			height={18}
+			viewBox="0 0 12 12"
+			width={18}
+			xmlns="http://www.w3.org/2000/svg"
+			{...props}
+		>
+			<path
+				d="M2.5 10.5V4.11C2.5 3.54051 2.5 3.25577 2.61259 3.03903C2.70746 2.85638 2.85638 2.70746 3.03903 2.61259C3.25577 2.5 3.54051 2.5 4.11 2.5H4.83312C5.0818 2.5 5.20615 2.5 5.32305 2.52855C5.42245 2.55282 5.5175 2.5922 5.60495 2.64531C5.7078 2.70779 5.7957 2.79572 5.97155 2.97156L6.52845 3.52844C6.7043 3.70428 6.7922 3.79221 6.89505 3.85469C6.9825 3.9078 7.07755 3.94718 7.17695 3.97145C7.29385 4 7.4182 4 7.6669 4H7.89C8.4595 4 8.74425 4 8.96095 4.11259C9.1436 4.20746 9.29255 4.35638 9.3874 4.53902C9.5 4.75576 9.5 5.04051 9.5 5.61V6.89C9.5 7.4595 9.5 7.74425 9.3874 7.96095C9.29255 8.1436 9.1436 8.29255 8.96095 8.3874C8.74425 8.5 8.4595 8.5 7.89 8.5H7.6669C7.4182 8.5 7.29385 8.5 7.17695 8.47145C7.07755 8.44715 6.9825 8.4078 6.89505 8.3547C6.7922 8.2922 6.7043 8.2043 6.52845 8.02845L5.97155 7.47155C5.7957 7.2957 5.7078 7.2078 5.60495 7.1453C5.5175 7.0922 5.42245 7.05285 5.32305 7.02855C5.20615 7 5.0818 7 4.83312 7H4.5"
+				stroke="#0066FF"
+				strokeWidth="0.625"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	);
+};
+
+export const FileAddIcon: React.FC<IconSvgProps> = (props) => {
+
+	return (
+		<svg
+			fill="none"
+			height={18}
+			viewBox="0 0 12 12"
+			width={18}
+			xmlns="http://www.w3.org/2000/svg"
+			{...props}
+		>
+			<g clip-path="url(#clip0_139_2819)">
+				<path d="M9 5.5V5.41422C9 5.149 8.89465 4.89465 8.7071 4.70711L6.7929 2.7929C6.60535 2.60536 6.351 2.5 6.0858 2.5H6M9 5.5V9.5C9 10.0523 8.5523 10.5 8 10.5H6.5M9 5.5H7C6.4477 5.5 6 5.05229 6 4.5V2.5M6 2.5H4C3.44771 2.5 3 2.94771 3 3.5V7M3 10.5V9.25M3 10.5V11.75M3 10.5H1.75M3 10.5H4.25"
+					stroke="#08C710"
+					strokeWidth="0.625"
+					strokeLinecap="round"
+					strokeLinejoin="round" />
+			</g>
+			<defs>
+				<clipPath id="clip0_139_2819">
+					<rect width="12" height="12" fill="white" transform="translate(0 0.5)" />
+				</clipPath>
+			</defs>
+		</svg>
+	);
+};
+
+export const Team1Icon: React.FC<IconSvgProps> = (props) => {
+
+	return (
+		<svg
+			fill="none"
+			height={18}
+			viewBox="0 0 12 12"
+			width={18}
+			xmlns="http://www.w3.org/2000/svg"
+			{...props}
+		>
+			<path
+				d="M7.99975 8.75H9.74975C10.3021 8.75 10.7742 8.2756 10.5139 7.7885C10.0859 6.98765 9.1212 6.5 7.99975 6.5C7.451 6.5 6.9413 6.61125 6.51385 6.8182M1.48567 9.0385C1.91366 8.23765 2.87832 7.75 3.99976 7.75C5.1212 7.75 6.08585 8.23765 6.51385 9.0385C6.77415 9.5256 6.30205 10 5.74975 10H2.24976C1.69747 10 1.22537 9.5256 1.48567 9.0385ZM5.24975 5C5.24975 5.69035 4.69011 6.25 3.99976 6.25C3.3094 6.25 2.74976 5.69035 2.74976 5C2.74976 4.30964 3.3094 3.75 3.99976 3.75C4.69011 3.75 5.24975 4.30964 5.24975 5ZM9.24975 3.75C9.24975 4.44036 8.6901 5 7.99975 5C7.3094 5 6.74975 4.44036 6.74975 3.75C6.74975 3.05964 7.3094 2.5 7.99975 2.5C8.6901 2.5 9.24975 3.05964 9.24975 3.75Z"
+				stroke="#08C710"
+				strokeWidth="0.625"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	);
+};
+
+export const MetricIcon: React.FC<IconSvgProps> = (props) => {
+
+	return (
+		<svg
+			fill="none"
+			height={18}
+			viewBox="0 0 12 12"
+			width={18}
+			xmlns="http://www.w3.org/2000/svg"
+			{...props}
+		>
+			<path
+				d="M6 6.5V9M8 5V9M4 7V9"
+				stroke="#08C710"
+				strokeWidth="0.625"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+			<path
+				d="M7.55 1.75H4.45C3.32989 1.75 2.76985 1.75 2.34202 1.96799C1.9657 2.15974 1.65974 2.4657 1.46799 2.84202C1.25 3.26985 1.25 3.82989 1.25 4.95V8.05C1.25 9.1701 1.25 9.73015 1.46799 10.158C1.65974 10.5343 1.9657 10.8402 2.34202 11.032C2.76985 11.25 3.32989 11.25 4.45 11.25H7.55C8.6701 11.25 9.23015 11.25 9.658 11.032C10.0343 10.8402 10.3402 10.5343 10.532 10.158C10.75 9.73015 10.75 9.1701 10.75 8.05V4.95C10.75 3.82989 10.75 3.26985 10.532 2.84202C10.3402 2.4657 10.0343 2.15974 9.658 1.96799C9.23015 1.75 8.6701 1.75 7.55 1.75Z"
+				stroke="#08C710"
+				strokeWidth="0.625"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	);
+};
+
+export const TicketsIcon: React.FC<IconSvgProps> = (props) => {
+
+	return (
+		<svg
+			fill="none"
+			height={18}
+			viewBox="0 0 12 13"
+			width={18}
+			xmlns="http://www.w3.org/2000/svg"
+			{...props}
+		>
+			<path
+				d="M10 9H3C2.44771 9 2 8.5523 2 8V7.5C2 7.22385 2.23726 7.01035 2.47949 6.87775C2.78967 6.70795 3 6.37855 3 6C3 5.62145 2.78967 5.29203 2.47949 5.12223C2.23726 4.98964 2 4.77615 2 4.5V4M10 9C10.5523 9 11 8.5523 11 8V7.5C11 7.22385 10.7628 7.01035 10.5205 6.87775C10.2104 6.70795 10 6.37855 10 6C10 5.62145 10.2104 5.29203 10.5205 5.12223C10.7628 4.98964 11 4.77615 11 4.5V4C11 3.44771 10.5523 3 10 3H3C2.44771 3 2 3.44771 2 4M10 9C10 9.5523 9.5523 10 9 10H2C1.44771 10 1 9.5523 1 9V8.5C1 8.22385 1.23726 8.01035 1.47949 7.87775C1.78967 7.70795 2 7.37855 2 7C2 6.62145 1.78967 6.29205 1.47949 6.12225C1.23726 5.98965 1 5.77615 1 5.5V5C1 4.44771 1.44771 4 2 4M4.25 4.5V5.5M4.25 6.5V7.5M4.25 8.5V9M4.25 3.5V3M5.75 7.5H9M5.75 6H7.5"
+				stroke="#08C710"
+				strokeWidth="0.625"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	);
+};
+
 

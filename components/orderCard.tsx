@@ -1,9 +1,6 @@
 'use client'
 
-import NetherlandsFlag from '@/public/Netherlands.svg'
 import Image from 'next/image';
-import MailIcon from '@/public/mail.svg'
-import PhoneIcon from '@/public/phone.svg'
 import { Divider } from '@nextui-org/divider';
 import ProductImage from "@/public/product-image.png"
 import { useContext } from 'react';
@@ -12,7 +9,6 @@ import { ScrollShadow } from '@nextui-org/scroll-shadow';
 
 const OrderCard = () => {
   const [cartState] = useContext<cartStateType[] | any>(CartContext)
-  console.log(cartState)
   return (
     <div className="flex flex-col w-full h-auto font-medium">
       <div className="flex flex-col gap-3">
@@ -42,7 +38,7 @@ const OrderCard = () => {
       <Divider className='my-3'/>
       <div className="flex flex-col gap-3 h-full">
         <h1>Products</h1>
-        <ScrollShadow className='h-64' hideScrollBar size={20}>
+        <ScrollShadow className='h-56' hideScrollBar size={20}>
           <div className='flex flex-col gap-3 w-full'>
           {cartState.map((item: cartStateType, index:number) => (
               <div key={index + `_cart_product`} className="flex flex-row justify-between">
@@ -59,6 +55,15 @@ const OrderCard = () => {
           ))}
             </div>
         </ScrollShadow>
+        <Divider className='bg-primary h-1 rounded-full' />
+        <div className="flex flex-row justify-between items-center">
+          <h1>Total</h1>
+          <h1>{`$ `}
+            {cartState.reduce((initial: number, reduceItem:cartStateType) => {
+              return initial += reduceItem.singlePrice*reduceItem.quantity
+            }, 0)}
+          </h1>
+        </div>
       </div>
     </div>
   )

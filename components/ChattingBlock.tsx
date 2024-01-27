@@ -1,34 +1,43 @@
 'use client'
 
 import { Tooltip } from "@nextui-org/tooltip"
-import EyeIcon from "./EyeIcon"
 import { Button } from "@nextui-org/button"
-import { title } from "./primitives"
+import dynamic from "next/dynamic"
 import BlobIcon from "./BlobIcon"
 import SendIcon from "./SendIcon"
 import { ConnectionIcon, DeleteIcon, EditIcon, EmojiSmileIcon, TranslateIcon } from "./icons"
 import { Textarea } from "@nextui-org/input"
-import { Dispatch, useRef, useState } from "react"
-import { ScrollShadow } from "@nextui-org/scroll-shadow"
+import { useEffect, useRef, useState } from "react"
+import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/dropdown"
+import ChevronIcon from "./ChevronIcon"
+import { chattinglogType } from "./chatbotChatting"
 
-const message = [
+const ChattingLogPane = dynamic(() => import("./chattingLog"), { ssr: false })
+
+const initialChattingLog = [
 	{
-		speaker: 'bot',
-		description: 'Hello, How can i assist you today?'
-	}
-] as messageType[]
-
-interface messageType {
-	speaker: string,
-	description: string
-}
+		sender: 'bot',
+		body: "Hello and welcome to our chatbot! I am able to assist you with any questions regarding our webshop, products and orders.",
+		time: new Date('Mon Jan 22 2024 03:11:27 GMT-1000 (Hawaii-Aleutian Standard Time)').toLocaleTimeString(),
+		sent: true,
+		checked: true
+	},
+	{
+		sender: 'man',
+		body: "Hello and welcome to our chatbot! I am able to assist you with any questions regarding our webshop, products and orders.",
+		time: new Date('Mon Jan 22 2024 03:12:12 GMT-1000 (Hawaii-Aleutian Standard Time)').toLocaleTimeString(),
+		sent: true,
+		checked: true
+	},
+] as chattinglogType[]
 
 const ChattingBlock = () => {
 
 	const sendBtnRef = useRef<HTMLButtonElement | null>(null)
 	const inputRef = useRef<HTMLTextAreaElement | null>(null)
-	const [messageList, setMessageList] = useState(message)
+	const [chattingLog, setChattingLog] = useState(initialChattingLog)
 	const [newMessage, setNewMessage] = useState('')
+
 	const handleKeydown = (e: any) => {
 		if (e.keyCode == 13) {
 			e.preventDefault()
@@ -37,20 +46,39 @@ const ChattingBlock = () => {
 		}
 	}
 	const handleSubmit = () => {
-		const newMessageList = [...messageList, {
-			speaker: 'human',
-			description: newMessage
-		}]
-		setMessageList(newMessageList)
-		setNewMessage('')
+		if (newMessage.trim() != '') {
+			const newMessageList = [...chattingLog, {
+				sender: 'man',
+				body: newMessage.trim(),
+				time: new Date('Mon Jan 22 2024 03:12:12 GMT-1000 (Hawaii-Aleutian Standard Time)').toLocaleTimeString(),
+				sent: true,
+				checked: true
+			}]
+			setChattingLog(newMessageList)
+			setNewMessage('')
+		}
 	}
 	return (
 		<div className="flex flex-col flex-grow justify-between h-full min-h-fit max-w-6xl w-full shadow-lg">
-			<div className="flex flex-row justify-between text-base p-4 bg-primary-100 rounded-t-xl">
-				<div>New Ticket: #2212</div>
-				<div>Change Status</div>
+			<div className="flex flex-row justify-between text-base p-4 bg-primary-100 font-medium rounded-t-xl">
+				<div className="text-primary">New Ticket: #2212</div>
+				<div className="flex flex-row gap-1 items-center">
+					<h1>Change Status</h1>
+					<Dropdown className='w-full bg-foreground-100' placement="bottom-end">
+						<DropdownTrigger>
+							<Button isIconOnly size="sm" radius="full" className="p-0 bg-transparent">
+								<ChevronIcon className="-rotate-90" width={16} height={16} />
+							</Button>
+						</DropdownTrigger>
+						<DropdownMenu aria-label="NextUI dropdown component" disabledKeys={["", ""]}>
+							<DropdownItem key="option-1">Option 1</DropdownItem>
+							<DropdownItem key="option-2">Option 2</DropdownItem>
+							<DropdownItem key="option-3">Option 3</DropdownItem>
+						</DropdownMenu>
+					</Dropdown>
+				</div>
 			</div>
-			<div className="flex flex-col justify-between p-4 gap-5 border-b-1 bg-foreground-200">
+			<div className="flex flex-col justify-between p-4 gap-5 border-b-2 bg-foreground-50 dark:bg-foreground-100">
 				<div className="text-2xl font-bold">Sipping Questions</div>
 				<div className="flex flex-row justify-between">
 					<div>Tue, Nov 28, 2023 at 10:21 AM</div>
@@ -73,7 +101,7 @@ const ChattingBlock = () => {
 					</div>
 				</div>
 			</div>
-			<div className="flex flex-col relative h-full w-full bg-foreground-100">
+			<div className="flex flex-col relative h-full w-full bg-foreground-50 dark:bg-foreground-100">
 				<div className="absolute bottom-0 w-full">
 					<div className="w-full m-0 px-4">
 						{/* <div className="w-full rounded-lg p-2 bg-foreground-200 h-32">hello</div> */}
@@ -114,17 +142,7 @@ const ChattingBlock = () => {
 						</Button>
 					</div>
 				</div>
-				<ScrollShadow className="h-96 p-8" hideScrollBar>
-					<div className="flex flex-col gap-4 min-h-full h-full w-full">
-						{messageList.map((item, key) => (
-							<div key={item.description + key} >
-								<div className="p-2 rounded-lg bg-foreground-50 shadow-md m-auto">
-									{item.description}
-								</div>
-							</div>
-						))}
-					</div>
-				</ScrollShadow>
+				<ChattingLogPane className="w-full h-96 flex flex-col p-8 gap-6 overflow-y-scroll scrollbar-hide" chattingLog={chattingLog} />
 			</div>
 		</div>
 	)

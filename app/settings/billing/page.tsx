@@ -1,43 +1,26 @@
-import { Input } from "@nextui-org/input";
-import { BinIcon, DotIcon, EditIcon, VisaIcon } from "@/components/icons";
+import { BinIcon, CreditCardIcon, DotIcon, VisaIcon } from "@/components/icons";
 import { Button } from "@nextui-org/button";
 import { Chip } from "@nextui-org/chip";
+import { Link } from "@nextui-org/link";
+import CurrentPlan from "@/components/currentPlan";
 
 export default function BillingPage() {
   return (
     <div className="flex flex-row gap-40 w-full pt-8">
       <div className="flex flex-col gap-6 w-full max-w-md">
-        <h2 className="text-lg font-bold">Billing & Plans</h2>
+        <h2 className="text-2xl font-bold">Billing & Plans</h2>
         <div className="flex flex-col gap-8">
-          <div className="flex flex-col gap-6">
-            <div className="flex items-start pb-3 border-b-1 text-medium font-medium">
-              <h2>Current Plan</h2>
-            </div>
-            <div className="flex flex-row justify-between items-center">
-              <div className="flex flex-col items-start">
-                <h1 className="text-xl font-bold">Premium</h1>
-                <div className="flex flex-row gap-1 items-center">
-                  <h1 className="text-2xl font-bold text-primary">$80</h1>
-                  <span>/month</span>
-                </div>
-                <p className="text-xs text-foreground-400">Your plan renews on February 11, 2024</p>
-              </div>
-              <div className="flex flex-col justify-between h-full">
-                <Button color="primary" radius="full" size="sm">Update Plan</Button>
-                <Button color="danger" variant="bordered" radius="full" size="sm">Cancel Plan</Button>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col mt-4 gap-6">
-            <div className="flex items-start pb-3 border-b-1 text-medium font-medium">
-              <h2>Current Plan</h2>
+          <CurrentPlan />
+          <div className="flex flex-col gap-4">
+            <div className="flex items-start pb-3 border-b-1 text-medium font-bold">
+              <h2>Payment Method</h2>
             </div>
             <div className="flex flex-row justify-between items-center">
               <div className="flex flex-row items-center gap-3">
                 <VisaIcon />
                 <h1>Visa</h1>
                 <div className="flex flex-row items-center gap-1">
-                  {['', '', '', ''].map(() => <DotIcon />)}
+                  {['', '', '', ''].map((item: string, index: number) => <DotIcon key={'dot_icon_' + index} />)}
                 </div>
                 <span>0126</span>
                 <Chip color="default" radius="full" size="sm" className="text-xs leading-3 font-medium text-white">Default</Chip>
@@ -47,54 +30,38 @@ export default function BillingPage() {
                 <BinIcon />
               </div>
             </div>
+            <div className="flex items-center">
+                <Button href="/settings/billing/add-payment" as={Link} radius="full" color="primary" size="md" variant="solid" startContent={<CreditCardIcon />}>
+                  Add Payment method
+                </Button>
+            </div>
           </div>
-
-        </div>
-        <Input
-          type="email"
-          label={
-            <div className="text-base font-medium">
-              Email
+          <div className="flex flex-col gap-4">
+            <div className="flex items-start pb-3 border-b-1 text-medium font-bold">
+              <h2>Shipping and Tax Info</h2>
             </div>
-          }
-          radius="sm"
-          variant="bordered"
-          placeholder="John@mail.com"
-          labelPlacement="outside"
-          className="max-w-md w-full"
-        />
-        <Input
-          type="phone"
-          label={
-            <div className="text-base font-medium">
-              Phone Number
+            <div className="grid grid-cols-2 justify-between items-start text-sm font-medium">
+              <div className="flex flex-row items-center gap-3">
+                <h1>Shipping Address</h1>
+              </div>
+              <div className="flex flex-row gap-4 items-center">
+                <h1>7662 Hegmann Wall Apt.124 Pollichchester, IA 13008-3640, New MacUnited State</h1>
+              </div>
             </div>
-          }
-          autoComplete="none"
-          radius="sm"
-          variant="bordered"
-          placeholder="+3197010265159"
-          labelPlacement="outside"
-          className="max-w-md w-full"
-        />
-        <Input
-          type="password"
-          label={
-            <div className="text-base font-medium">
-              Change Password
+            <div className="grid grid-cols-2 justify-between items-start text-sm font-medium">
+              <div className="flex flex-row items-center gap-3">
+                <h1>Tax Info</h1>
+              </div>
+              <div className="flex flex-row gap-4 items-center">
+                <h1>NL1234567889B12</h1>
+              </div>
             </div>
-          }
-          autoComplete="off"
-          radius="sm"
-          variant="bordered"
-          placeholder="****"
-          labelPlacement="outside"
-          className="max-w-md w-full"
-        />
-        <div className="flex items-center">
-          <Button radius="full" color="primary" size="md" variant="solid" startContent={<EditIcon />}>
-            Upload Security Info
-          </Button>
+            <div className="flex items-center">
+                <Button  href="/settings/billing/update-info" as={Link} radius="full" color="primary" size="md" variant="solid" startContent={<CreditCardIcon />}>
+                  Update Shipping and Tax
+                </Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

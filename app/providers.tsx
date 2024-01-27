@@ -8,23 +8,27 @@ import { ThemeProviderProps } from "next-themes/dist/types";
 import { createContext } from 'react'
 import SidebarProvider from "./sidebarProvider";
 import CartProvider from "./cartProvider";
+import PlanProvider, { currentPlanType } from "./planProvider";
 
 export const ThemeContext = createContext({})
 
 export interface ProvidersProps {
 	children: React.ReactNode;
 	themeProps?: ThemeProviderProps;
+	planProps?: currentPlanType
 }
 
-export function Providers({ children, themeProps }: ProvidersProps) {
-  const router = useRouter();
+export function Providers({ children, themeProps, planProps }: ProvidersProps) {
+	const router = useRouter();
 
 	return (
 		<NextUIProvider navigate={router.push}>
 			<NextThemesProvider {...themeProps}>
 				<SidebarProvider>
 					<CartProvider>
-						{children}
+						<PlanProvider props={planProps}>
+							{children}
+						</PlanProvider>
 					</CartProvider>
 				</SidebarProvider>
 			</NextThemesProvider>

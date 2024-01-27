@@ -1,19 +1,25 @@
+'use client'
+
 import { SearchIcon } from "@/components/icons";
 import { title } from "@/components/primitives";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { Input } from "@nextui-org/input";
 import TabComponent from "./tabComponent";
+import { useContext } from "react";
+import { PlanContext, currentPlanType } from "../planProvider";
 
 export default function SettingsLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
+	const [currentPlan, setCurrentPlan] = useContext<currentPlanType | any>(PlanContext)
 	return (
 		<section className="flex flex-col justify-between w-full h-full min-h-max gap-6 p-8">
 			<div className="flex flex-col gap-4 h-full min-h-max">
 				<div className="flex justify-between">
 					<h1 className={title()}>Settings</h1>
+					<h1 className={title()}>{currentPlan.level}</h1>
 					<div className="flex flex-row gap-2">
 						<ThemeSwitch />
 						<Input

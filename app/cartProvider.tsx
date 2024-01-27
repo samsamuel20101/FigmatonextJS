@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 export interface cartStateType {
   key: string,

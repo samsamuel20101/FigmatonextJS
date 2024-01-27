@@ -5,7 +5,7 @@ import {ScrollShadow} from "@nextui-org/scroll-shadow";
 import Sidebar from "./sidebar";
 import { SidebarContext } from "@/app/sidebarProvider";
 const Layout = ({children, className}:{children: ReactNode, className: string}) => {
-	const [sidebarStatus, setSidebarStatus] = useContext(SidebarContext)
+	const [sidebarStatus, ] = useContext(SidebarContext)
   return (
     <main
       className={clsx({

@@ -44,7 +44,7 @@ const Card = ({ props }: { props: cardProps }) => {
 			<div className="relative w-full flex justify-between items-center">
 				{name}
 				<div className="absolute right-0 top-0 bg-[#06F] p-1 rounded-md">
-					<Image src={avatarList[nameList.indexOf(name)]} alt={name} width={24} height={24} />
+					<Image src={avatarList[nameList.indexOf(name)]} alt={name} width={24} />
 				</div>
 			</div>
 			<div className="flex flex-col">

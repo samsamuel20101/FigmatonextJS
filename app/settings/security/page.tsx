@@ -6,7 +6,7 @@ export default function SecurityPage() {
   return (
     <div className="flex flex-row gap-40 w-full pt-8">
       <div className="flex flex-col gap-6 w-full max-w-md">
-        <h2 className="text-lg font-bold">Profile Info</h2>
+        <h2 className="text-2xl font-bold">Profile Info</h2>
         <Input
           type="email"
           label={

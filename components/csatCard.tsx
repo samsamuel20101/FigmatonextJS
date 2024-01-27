@@ -1,9 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import TodayMeter from '@/public/today.png'
-import MonthMeter from '@/public/month.png'
-import mask from '@/public/Switch1.svg'
 import Image from 'next/image'
 import customersIcon from '@/public/customers.svg'
 import MeterProgress from '@/public/meterProgress.png'
@@ -15,7 +12,6 @@ export interface csatProps {
 	increases: number,
 	originalNum: number,
 	percents: number,
-	meter: any
 }
 
 const CSATdata = [
@@ -24,14 +20,12 @@ const CSATdata = [
 		increases: 1430,
 		originalNum: 2360,
 		percents: 80,
-		meter: TodayMeter
 	},
 	{
 		title: 'This Month',
 		increases: 234563,
 		originalNum: 341674,
 		percents: 50,
-		meter: MonthMeter
 	},
 ] as csatProps[]
 
@@ -50,7 +44,7 @@ const CsatCard = () => {
       }
     }, 20);
     return () => clearInterval(interval);
-  }, [percent1,percent2])
+  }, [percent1, percent2, time])
 
 	return (
 		<div className="w-full h-[312px] p-6 flex flex-col justify-start gap-10 items-start rounded-2xl shadow-2xl bg-foreground-100">

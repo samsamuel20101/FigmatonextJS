@@ -104,7 +104,7 @@ export default function LinkedShopPage() {
   return (
     <div className="flex flex-row gap-40 w-full h-full pt-4">
       <div className="flex flex-col gap-4 w-full">
-        <h2 className="text-lg font-bold">Linked Shop</h2>
+        <h2 className="text-2xl font-bold">Linked Shop</h2>
         <div className="flex items-start pb-3 border-b-1 text-lg font-medium max-w-md">
           <h2>Integrations</h2>
         </div>
