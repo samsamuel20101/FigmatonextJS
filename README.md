@@ -4,19 +4,22 @@ This is a template for creating applications using Next.js 13 (app directory) an
 
 ## Technologies Used
 
-- [Next.js 13](https://nextjs.org/docs/getting-started)
-- [NextUI v2](https://nextui.org/)
+- [Next.js 14.1.0](https://nextjs.org/docs/getting-started)
+- [NextUI v2.2.9](https://nextui.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Tailwind Variants](https://tailwind-variants.org)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [next-themes](https://github.com/pacocoursey/next-themes)
+- [daisyui](https://github.com/daisyui)
+- [react-simple-maps](https://github.com/zcreativelabs/react-simple-maps)
+- [@types/react-simple-maps](https://www.npmjs.com/package/@types/react-simple-maps)
 
 ## How to Use
 
-### Use the template with create-next-app
+### Use git command to clone this repository
 
-To create a new project based on this template using `create-next-app`, run the following command:
+To clone this repository to your local PC, run the following command:
 
 ```bash
 git clone https://github.com/samsamuel20101/FigmatonextJS.git
@@ -36,4 +39,4 @@ npm run dev
 
 ## License
 
-Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
+? It is yours.
