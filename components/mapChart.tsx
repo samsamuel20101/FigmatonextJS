@@ -72,7 +72,7 @@ const MapChart = ({globalMousePos, setGlobalMousePos}:{globalMousePos:{ x: numbe
               </div>
             }
           >
-            <Geographies geography="/features.json">
+            <Geographies geography="/features.json" className="geographies">
               {({ geographies }) =>
                 geographies.map((geo) => (
                   <Geography

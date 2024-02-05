@@ -5,3 +5,26 @@
 .menu li {
     min-height: 52px;
 }
+
+.geographies {
+    /* transform-origin: center center; */
+    transform: translate(-5%, 30%) scale(1);
+}
+
+@media (min-width: 1024px) {
+    .geographies {
+      transform: translate(-5%, 3%) scale(1.0);
+    }
+}
+
+@media (min-width: 1280px) {
+    .geographies {
+      transform: translate(-5%, -4%) scale(1.0);
+    }
+}
+
+@media (min-width: 1440px) {
+    .geographies {
+      transform: translate(0%, -10%) scale(0.9);
+    }
+}
